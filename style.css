@@ -1,0 +1,94 @@
+/* Importação de fonte básica do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    /* Definição de Cores */
+    --cor-fundo: #f4f7f9;
+    --cor-texto: #333;
+    --cor-primaria: #007bff; /* Azul */
+    --cor-secundaria: #6c757d; /* Cinza */
+    --cor-alerta: #dc3545; /* Vermelho */
+    --cor-sucesso: #28a745; /* Verde */
+}
+
+/* Estilos Gerais */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+}
+
+h1 {
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+}
+
+#mensagem-status {
+    margin-bottom: 30px;
+    font-weight: 700;
+    min-height: 20px; /* Para evitar quebra de layout ao mudar o texto */
+}
+
+/* Estilo do Botão Base */
+.botao {
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+    color: white; /* Cor do texto padrão para todos os botões */
+    min-width: 150px;
+}
+
+/* Variações de Cores */
+.botao.primario {
+    background-color: var(--cor-primaria);
+}
+
+.botao.secundario {
+    background-color: var(--cor-secundaria);
+}
+
+.botao.alerta {
+    background-color: var(--cor-alerta);
+}
+
+/* Efeitos de Interação (Hover e Active) */
+.botao:hover {
+    opacity: 0.9;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.botao:active {
+    /* Efeito de "pressionar" */
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para um botão desabilitado (opcional) */
+.botao:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+    box-shadow: none;
+    transform: none;
+}
