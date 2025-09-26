@@ -1,94 +1,162 @@
-/* Importação de fonte básica do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
+/* Definições de Variáveis CSS para Cores */
 :root {
-    /* Definição de Cores */
-    --cor-fundo: #f4f7f9;
-    --cor-texto: #333;
-    --cor-primaria: #007bff; /* Azul */
-    --cor-secundaria: #6c757d; /* Cinza */
-    --cor-alerta: #dc3545; /* Vermelho */
-    --cor-sucesso: #28a745; /* Verde */
+    --cor-fundo-principal: #1e1e1e;       /* Fundo escuro (Terminal/VSCode) */
+    --cor-fundo-container: #252526;     /* Fundo um pouco mais claro */
+    --cor-texto-principal: #d4d4d4;       /* Texto branco suave */
+    --cor-destaque: #00bcd4;             /* Azul Ciano (como destaque) */
+    --cor-sucesso: #4ec9b0;              /* Verde-água para sucesso/ações */
+    --cor-alerta: #ce9178;               /* Laranja suave para alertas/secundário */
+    --cor-borda-fina: #3c3c3c;
 }
 
-/* Estilos Gerais */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
+/* Estilos Globais e Reset Básico */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
 }
 
+body {
+    font-family: 'Roboto Mono', monospace; /* Fonte do terminal */
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-principal);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha o conteúdo ao topo para telas maiores */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container Principal */
 .container {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 600px;
-    width: 90%;
+    width: 100%;
+    max-width: 900px;
+    background-color: var(--cor-fundo-container);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra suave e escura */
+    border: 1px solid var(--cor-borda-fina);
+}
+
+/* Cabeçalho */
+header {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--cor-borda-fina);
 }
 
 h1 {
-    color: var(--cor-primaria);
+    font-size: 2em;
+    color: var(--cor-destaque);
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--cor-alerta);
+}
+
+/* Inputs de Valores */
+.inputs {
+    display: flex;
+    gap: 15px;
     margin-bottom: 20px;
 }
 
-#mensagem-status {
-    margin-bottom: 30px;
-    font-weight: 700;
-    min-height: 20px; /* Para evitar quebra de layout ao mudar o texto */
+input[type="number"] {
+    flex-grow: 1;
+    padding: 15px 10px;
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-principal);
+    border: 1px solid var(--cor-borda-fina);
+    border-radius: 4px;
+    font-size: 1em;
+    font-family: 'Roboto Mono', monospace;
+    transition: border-color 0.3s;
 }
 
-/* Estilo do Botão Base */
-.botao {
-    padding: 12px 25px;
-    margin: 10px;
+input[type="number"]:focus {
+    border-color: var(--cor-destaque);
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+}
+
+/* Placeholder Style - Deixa o texto do placeholder mais discreto */
+::placeholder {
+    color: #888;
+}
+
+/* Container do Resultado */
+.resultado-container {
+    background-color: var(--cor-fundo-principal);
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    border: 1px dashed var(--cor-borda-fina);
+}
+
+#resultado {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--cor-sucesso); /* O resultado fica em destaque */
+    white-space: pre-wrap; /* Permite quebra de linha em telas pequenas */
+    word-break: break-word;
+}
+
+
+/* Estilos dos Botões */
+.botoes-container {
+    display: grid;
+    /* Layout em colunas, ajustando automaticamente */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.operacao {
+    padding: 12px 10px;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 4px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9em;
     font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
-    color: white; /* Cor do texto padrão para todos os botões */
-    min-width: 150px;
+    background-color: var(--cor-borda-fina);
+    color: var(--cor-texto-principal);
+    transition: background-color 0.2s, transform 0.1s, color 0.2s;
+    text-align: left; /* Alinha o texto à esquerda */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adiciona '...' se o texto for muito longo */
 }
 
-/* Variações de Cores */
-.botao.primario {
-    background-color: var(--cor-primaria);
+/* Efeito de Interação (Hover) */
+.operacao:hover {
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo-principal); /* Inverte as cores ao passar o mouse */
+    transform: translateY(-2px); /* Efeito sutil de elevação */
+    box-shadow: 0 4px 8px rgba(0, 188, 212, 0.3);
 }
 
-.botao.secundario {
-    background-color: var(--cor-secundaria);
-}
-
-.botao.alerta {
-    background-color: var(--cor-alerta);
-}
-
-/* Efeitos de Interação (Hover e Active) */
-.botao:hover {
-    opacity: 0.9;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.botao:active {
-    /* Efeito de "pressionar" */
-    transform: translateY(1px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Estilo para um botão desabilitado (opcional) */
-.botao:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-    opacity: 0.7;
+/* Efeito de Clique (Active) */
+.operacao:active {
+    transform: translateY(0);
+    background-color: var(--cor-sucesso);
     box-shadow: none;
-    transform: none;
+}
+
+/* Responsividade para Telas Menores (Celulares) */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    
+    .inputs {
+        flex-direction: column;
+    }
+
+    /* Em telas muito pequenas, os botões ficam em uma coluna */
+    .botoes-container {
+        grid-template-columns: 1fr;
+    }
 }
