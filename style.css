@@ -1,15 +1,13 @@
-/* Definições de Variáveis CSS para Cores */
+/* Definição das Variáveis de Cor */
 :root {
-    --cor-fundo-principal: #1e1e1e;       /* Fundo escuro (Terminal/VSCode) */
-    --cor-fundo-container: #252526;     /* Fundo um pouco mais claro */
-    --cor-texto-principal: #d4d4d4;       /* Texto branco suave */
-    --cor-destaque: #00bcd4;             /* Azul Ciano (como destaque) */
-    --cor-sucesso: #4ec9b0;              /* Verde-água para sucesso/ações */
-    --cor-alerta: #ce9178;               /* Laranja suave para alertas/secundário */
-    --cor-borda-fina: #3c3c3c;
+    --vermelho-principal: #D32F2F; /* Vermelho vibrante e apetitoso */
+    --amarelo-secundario: #FFC107; /* Amarelo quente, mostarda */
+    --branco-texto: #FFFFFF;
+    --preto-fundo: #212121;
+    --cinza-claro: #f5f5f5;
 }
 
-/* Estilos Globais e Reset Básico */
+/* Estilos Globais e Reset */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,146 +15,306 @@
 }
 
 body {
-    font-family: 'Roboto Mono', monospace; /* Fonte do terminal */
-    background-color: var(--cor-fundo-principal);
-    color: var(--cor-texto-principal);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Alinha o conteúdo ao topo para telas maiores */
-    min-height: 100vh;
-    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--cinza-claro);
+    color: var(--preto-fundo);
+    line-height: 1.6;
 }
 
-/* Container Principal */
-.container {
-    width: 100%;
-    max-width: 900px;
-    background-color: var(--cor-fundo-container);
-    border-radius: 8px;
-    padding: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra suave e escura */
-    border: 1px solid var(--cor-borda-fina);
+h1, h2, h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
 }
 
-/* Cabeçalho */
+/* ------------------- */
+/* HEADER e Navegação */
+/* ------------------- */
+
 header {
-    margin-bottom: 30px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid var(--cor-borda-fina);
-}
-
-h1 {
-    font-size: 2em;
-    color: var(--cor-destaque);
-    margin-bottom: 5px;
-}
-
-h2 {
-    font-size: 1em;
-    font-weight: 400;
-    color: var(--cor-alerta);
-}
-
-/* Inputs de Valores */
-.inputs {
+    background-color: var(--vermelho-principal);
+    color: var(--branco-texto);
+    padding: 20px 5%;
     display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-input[type="number"] {
-    flex-grow: 1;
-    padding: 15px 10px;
-    background-color: var(--cor-fundo-principal);
-    color: var(--cor-texto-principal);
-    border: 1px solid var(--cor-borda-fina);
+.logo h1 {
+    font-size: 2.5em;
+    color: var(--amarelo-secundario);
+}
+
+.logo p {
+    font-size: 0.8em;
+    margin-top: -5px;
+}
+
+nav a {
+    color: var(--branco-texto);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--amarelo-secundario);
+}
+
+/* ------------------- */
+/* SEÇÃO DE DESTAQUE (HERO) */
+/* ------------------- */
+
+.hero {
+    background: url('https://via.placeholder.com/1200x500?text=Fundo+Lanches') no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--branco-texto);
+    position: relative;
+    z-index: 1;
+}
+
+/* Overlay escuro para melhorar a leitura do texto */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+.hero-content h2 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    color: var(--amarelo-secundario);
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: var(--amarelo-secundario);
+    color: var(--preto-fundo);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: 900;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-cta:hover {
+    background-color: var(--branco-texto);
+    transform: scale(1.05);
+}
+
+/* ------------------- */
+/* SEÇÃO DE MENU */
+/* ------------------- */
+
+.menu-section {
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.menu-section h3 {
+    font-size: 2.5em;
+    color: var(--vermelho-principal);
+    margin-bottom: 40px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--branco-texto);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding-bottom: 15px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--amarelo-secundario);
+}
+
+.card h4 {
+    margin: 15px 0 5px;
+    font-size: 1.5em;
+    color: var(--vermelho-principal);
+}
+
+.card p {
+    padding: 0 15px;
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.preco {
+    display: block;
+    font-size: 1.4em;
+    font-weight: 900;
+    color: var(--preto-fundo);
+    margin-bottom: 15px;
+}
+
+.add-to-cart {
+    background-color: var(--vermelho-principal);
+    color: var(--branco-texto);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.2s;
+}
+
+.add-to-cart:hover {
+    background-color: #A01D1D; /* Tom mais escuro de vermelho */
+}
+
+
+/* ------------------- */
+/* SEÇÃO DE PEDIDO */
+/* ------------------- */
+
+.pedido-section {
+    background-color: var(--amarelo-secundario);
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.pedido-section h3 {
+    font-size: 2.5em;
+    color: var(--vermelho-principal);
+    margin-bottom: 30px;
+}
+
+#form-pedido {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--branco-texto);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: left;
+}
+
+#form-pedido label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: var(--preto-fundo);
+}
+
+#form-pedido input[type="text"],
+#form-pedido textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1em;
-    font-family: 'Roboto Mono', monospace;
-    transition: border-color 0.3s;
 }
 
-input[type="number"]:focus {
-    border-color: var(--cor-destaque);
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
-}
-
-/* Placeholder Style - Deixa o texto do placeholder mais discreto */
-::placeholder {
-    color: #888;
-}
-
-/* Container do Resultado */
-.resultado-container {
-    background-color: var(--cor-fundo-principal);
-    padding: 15px;
-    border-radius: 4px;
-    margin-bottom: 30px;
-    border: 1px dashed var(--cor-borda-fina);
-}
-
-#resultado {
-    font-size: 1.2em;
-    font-weight: 700;
-    color: var(--cor-sucesso); /* O resultado fica em destaque */
-    white-space: pre-wrap; /* Permite quebra de linha em telas pequenas */
-    word-break: break-word;
-}
-
-
-/* Estilos dos Botões */
-.botoes-container {
-    display: grid;
-    /* Layout em colunas, ajustando automaticamente */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-}
-
-.operacao {
-    padding: 12px 10px;
+.btn-submit {
+    width: 100%;
+    background-color: var(--vermelho-principal);
+    color: var(--branco-texto);
     border: none;
-    border-radius: 4px;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 0.9em;
-    font-weight: 700;
+    padding: 15px;
+    border-radius: 5px;
     cursor: pointer;
-    background-color: var(--cor-borda-fina);
-    color: var(--cor-texto-principal);
-    transition: background-color 0.2s, transform 0.1s, color 0.2s;
-    text-align: left; /* Alinha o texto à esquerda */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; /* Adiciona '...' se o texto for muito longo */
+    font-weight: 900;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
 }
 
-/* Efeito de Interação (Hover) */
-.operacao:hover {
-    background-color: var(--cor-destaque);
-    color: var(--cor-fundo-principal); /* Inverte as cores ao passar o mouse */
-    transform: translateY(-2px); /* Efeito sutil de elevação */
-    box-shadow: 0 4px 8px rgba(0, 188, 212, 0.3);
+.btn-submit:hover {
+    background-color: var(--preto-fundo);
 }
 
-/* Efeito de Clique (Active) */
-.operacao:active {
-    transform: translateY(0);
-    background-color: var(--cor-sucesso);
-    box-shadow: none;
+.aviso-pedido {
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 0.9em;
+    color: #555;
 }
 
-/* Responsividade para Telas Menores (Celulares) */
+/* ------------------- */
+/* FOOTER */
+/* ------------------- */
+
+footer {
+    background-color: var(--preto-fundo);
+    color: var(--cinza-claro);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+/* ------------------- */
+/* Responsividade para Celulares */
+/* ------------------- */
+
 @media (max-width: 600px) {
-    .container {
-        padding: 20px;
-    }
-    
-    .inputs {
+    header {
         flex-direction: column;
+        text-align: center;
+        padding: 15px 5%;
     }
 
-    /* Em telas muito pequenas, os botões ficam em uma coluna */
-    .botoes-container {
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 0.9em;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5em;
+    }
+
+    .btn-cta {
+        padding: 12px 20px;
+        font-size: 0.9em;
+    }
+
+    .menu-section h3, .pedido-section h3 {
+        font-size: 2em;
+    }
+
+    /* O grid se ajusta automaticamente para 1 coluna em telas menores */
+    .menu-grid {
         grid-template-columns: 1fr;
     }
 }
