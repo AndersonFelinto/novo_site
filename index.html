@@ -1,69 +1,107 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Tomorrow - Atividade Aula 3</title>
+    <title>Mega Lanche - Seu Pedido Online</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="container">
+    <header>
+        <div class="logo">
+            <h1>MEGA LANCHE</h1>
+            <p>Sabor e velocidade!</p>
+        </div>
+        <nav>
+            <a href="#menu">Menu</a>
+            <a href="#pedido">Fazer Pedido</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <main>
         
-        <header>
-            <h1>> Projeto Tomorrow_</h1>
-            <h2>Chamada e Atividade da Aula 3</h2>
-        </header>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>O Sabor Que Você Merece!</h2>
+                <p>Experimente nosso combo especial da semana. Entrega rápida!</p>
+                <a href="#pedido" class="btn-cta">PEDIR AGORA!</a>
+            </div>
+        </section>
 
-        <div class="inputs">
-            <input type="number" id="num1" placeholder="VALOR 1">
-            <input type="number" id="num2" placeholder="VALOR 2">
-        </div>
-		
-		      <div class="resultado-container">
-            <p id="resultado">RESULTADO:</p>
-        </div>
+        <section id="menu" class="menu-section">
+            <h3>Nosso Cardápio</h3>
 
-        <div class="botoes-container">
-            <button id="btn-aluno1" class="operacao">SOMA (JOHN DOE)</button>
-            <button id="btn-aluno2" class="operacao">SUBTRAÇÃO (NEILANE)</button>
-            <button id="btn-aluno3" class="operacao">FEATURES (PROGRAMADOR 3)</button>
-            <button id="btn-aluno4" class="operacao">FEATURES (PROGRAMADOR 4)</button>
-            <button id="btn-aluno5" class="operacao">FEATURES (PROGRAMADOR 5)</button>
-            <button id="btn-aluno6" class="operacao">FEATURES (PROGRAMADOR 6)</button>
-            <button id="btn-aluno7" class="operacao">FEATURES (PROGRAMADOR 7)</button>
-            <button id="btn-aluno8" class="operacao">FEATURES (PROGRAMADOR 8)</button>
-            <button id="btn-aluno9" class="operacao">FEATURES (PROGRAMADOR 9)</button>
-            <button id="btn-aluno10" class="operacao">FEATURES (PROGRAMADOR 10)</button>
-            <button id="btn-aluno11" class="operacao">FEATURES (PROGRAMADOR 11)</button>
-            <button id="btn-aluno12" class="operacao">FEATURES (PROGRAMADOR 12)</button>
-            <button id="btn-aluno13" class="operacao">FEATURES (PROGRAMADOR 13)</button>
-            <button id="btn-aluno14" class="operacao">FEATURES (PROGRAMADOR 14)</button>
-            <button id="btn-aluno15" class="operacao">FEATURES (PROGRAMADOR 15)</button>
-            <button id="btn-aluno16" class="operacao">FEATURES (PROGRAMADOR 16)</button>
-            <button id="btn-aluno17" class="operacao">FEATURES (PROGRAMADOR 17)</button>
-            <button id="btn-aluno18" class="operacao">FEATURES (PROGRAMADOR 18)</button>
-            <button id="btn-aluno19" class="operacao">FEATURES (PROGRAMADOR 19)</button>
-            <button id="btn-aluno20" class="operacao">FEATURES (PROGRAMADOR 20)</button>
-            <button id="btn-aluno21" class="operacao">PERÍMETRO DO RETÂNGULO (LADOS) (ANDERSON)</button>
-            <button id="btn-aluno22" class="operacao">FEATURES (PROGRAMADOR 22)</button>
-            <button id="btn-aluno23" class="operacao">FEATURES (PROGRAMADOR 23)</button>
-            <button id="btn-aluno24" class="operacao">CELSIUS P/ FAHRENHEIT (CLAUDIA)</button>
-            <button id="btn-aluno25" class="operacao">FEATURES (PROGRAMADOR 25)</button>
-            <button id="btn-aluno26" class="operacao">FEATURES (PROGRAMADOR 26)</button>
-            <button id="btn-aluno27" class="operacao">FEATURES (PROGRAMADOR 27)</button>
-            <button id="btn-aluno28" class="operacao">FEATURES (PROGRAMADOR 28)</button>
-            <button id="btn-aluno29" class="operacao">FEATURES (PROGRAMADOR 29)</button>
-            <button id="btn-aluno30" class="operacao">FEATURES (PROGRAMADOR 30)</button>
-        </div>
+            <div class="menu-grid">
+                
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Hamburger+Clássico" alt="Hambúrguer Clássico">
+                    <h4>Burger Clássico</h4>
+                    <p>Pão, carne, queijo e molho especial.</p>
+                    <span class="preco">R$ 25,00</span>
+                    <button class="add-to-cart">Adicionar</button>
+                </div>
 
-  
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Batata+Frita" alt="Batata Frita">
+                    <h4>Batata Frita Mega</h4>
+                    <p>Porção grande com tempero da casa.</p>
+                    <span class="preco">R$ 15,00</span>
+                    <button class="add-to-cart">Adicionar</button>
+                </div>
 
-    </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Milkshake+Chocolate" alt="Milkshake de Chocolate">
+                    <h4>Milkshake Choc</h4>
+                    <p>Cremoso, com calda de chocolate.</p>
+                    <span class="preco">R$ 18,00</span>
+                    <button class="add-to-cart">Adicionar</button>
+                </div>
 
-    <script src="js/script.js"></script>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Lanche+Vegetariano" alt="Lanche Vegetariano">
+                    <h4>Veggie Burger</h4>
+                    <p>Hambúrguer de grão de bico e legumes frescos.</p>
+                    <span class="preco">R$ 30,00</span>
+                    <button class="add-to-cart">Adicionar</button>
+                </div>
+
+            </div>
+        </section>
+        
+        <section id="pedido" class="pedido-section">
+            <h3>Faça Seu Pedido</h3>
+            <form id="form-pedido">
+                <label for="nome">Seu Nome:</label>
+                <input type="text" id="nome" required>
+
+                <label for="endereco">Endereço de Entrega:</label>
+                <input type="text" id="endereco" required>
+                
+                <label for="itens">Itens do Pedido (Ex: 1x Burger, 1x Batata)</label>
+                <textarea id="itens" rows="4" required></textarea>
+
+                <button type="submit" class="btn-submit">FINALIZAR PEDIDO</button>
+            </form>
+            <p class="aviso-pedido">Obs: Este é um formulário de demonstração. Você será redirecionado para o WhatsApp após o envio.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mega Lanche. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script>
+        document.getElementById('form-pedido').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Pedido enviado! Em breve entraremos em contato para confirmar a entrega.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
